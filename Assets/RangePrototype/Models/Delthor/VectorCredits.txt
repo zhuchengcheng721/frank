@@ -1,0 +1,4 @@
+Vector SMG — Delthor Games (Daniel Abeleira)
+Source: https://delthor-games.itch.io/gun-pack
+Base license: CC BY-NC-ND 4.0, with the additional embedded-game permissions stated by the author on the source page.
+For this local Unity prototype, the downloaded FBX was preserved, and its existing mesh components were separated and recolored for animation in the game. This is the Delthor model used as a close visual reference, separate from the original video creator's assets.

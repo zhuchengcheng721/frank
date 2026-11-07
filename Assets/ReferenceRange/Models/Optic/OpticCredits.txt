@@ -1,0 +1,5 @@
+Generic Red Dot Scope / Rifle Attachment Lowpoly by valterjherson1
+Original: https://sketchfab.com/3d-models/generic-red-dot-scope-rifle-attachment-lowpoly-8bf2794c30d04fa0aed1e3df92cd8a9e
+License: Creative Commons Attribution 4.0 International, https://creativecommons.org/licenses/by/4.0/
+Source copy and prior adaptations (logo removal and smoothed housing): IRONLINE, https://github.com/cktang88/3d-fps#credits--licences
+This adaptation isolates the downloaded micro optic from optics.glb, converts its geometry to OBJ and textures to PNG, and may be rescaled to the game's gun model.

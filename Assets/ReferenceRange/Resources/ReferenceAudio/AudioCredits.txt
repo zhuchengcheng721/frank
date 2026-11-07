@@ -1,0 +1,18 @@
+Range audio credits
+
+All five assets use recordings that the creators published under CC0 1.0.
+License: https://creativecommons.org/publicdomain/zero/1.0/
+
+shot.wav — Colt M4A1 SOCOM, recorded by areniporgen
+https://freesound.org/people/areniporgen/sounds/737569/
+
+mag_out.wav, mag_in.wav, chamber.wav — Assault Rifle Reload, edited by qubodup
+https://freesound.org/people/qubodup/sounds/815879/
+Underlying CC0 rifle recordings by serøutōnin--deprivəd
+https://freesound.org/s/725403/
+https://freesound.org/s/674748/
+
+dry_fire.wav — GUNRif_M1 GARAND DRY FIRE_MP.wav, recorded by MPierluissi
+https://freesound.org/people/MPierluissi/sounds/460852/
+
+The public high-quality previews were trimmed, faded, and level-adjusted as 48 kHz PCM WAV files. The three reload files are separate excerpts of the edited rifle reload, used as cues in the prototype.

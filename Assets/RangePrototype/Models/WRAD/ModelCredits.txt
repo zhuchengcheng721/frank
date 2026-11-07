@@ -1,0 +1,8 @@
+WRAD ARMS — rigged first-person arms by wriks, CC0 1.0 Universal
+https://github.com/wwwriks/wrad-arms
+https://creativecommons.org/publicdomain/zero/1.0/
+
+The FBX, GLB, OBJ and skin atlases are from the author's repository.
+The optional dark cloth overlay was generated from the arm mesh's UVs and joint weights.
+
+arm_albedo_sleeves.png composites the mesh-UV cloth overlay onto the downloaded pale skin atlas.

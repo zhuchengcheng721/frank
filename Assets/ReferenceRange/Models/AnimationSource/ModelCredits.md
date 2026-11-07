@@ -1,0 +1,198 @@
+# FPS Animated SMG License
+
+The runtime models in this directory are adapted from **fps animated smg** by
+**DJMaesen**.
+
+- Creator: DJMaesen (`https://sketchfab.com/bumstrum`)
+- Source: `https://sketchfab.com/3d-models/fps-animated-smg-ea3dad7478624495a5a46f40127b0579`
+- License: Creative Commons Attribution 4.0 International (CC BY 4.0)
+- License text: `https://creativecommons.org/licenses/by/4.0/`
+- Acquired: 2026-08-21
+- Original tracked file:
+  `source_art/third_party/djmaesen_fps_smg45/fps_animated_smg.glb`
+- Original SHA-256:
+  `61F30D8980CE292869F97D98587A2736BAF719A19C0A32756838BD9EF2ADA83A`
+- Runtime adaptations: `smg45_first_person.glb`, `first_person_arms.glb`,
+  `smg45_weapon.glb`, `smg45_rifle_arms.glb`,
+  `smg45_pistol_service_arms.glb`, `smg45_pistol_large_arms.glb`, and
+  `animated_reload_arms.glb` (with their generated `*_Image_*.png` texture
+  sidecars)
+- Build scripts: `scripts/blender/build_djmaesen_smg45.py`,
+  `scripts/blender/build_first_person_arms.py`, and
+  `scripts/blender/build_animated_reload_arms.py` (113,156 bytes, SHA-256
+  `E1D5A00AC58343E6FA5CDA60C65812E5DBE3E7B08C713B8F0A2F63DC57543E9B`)
+- Animated arms reproducible DCC source:
+  `source_art/third_party/djmaesen_fps_smg45/animated_reload_arms.blend`
+- Static pose variants generated: 2026-08-24
+- Animated reload-arm derivative generated: 2026-08-29
+- Animated left-arm IK continuity and elbow-pole revision: 2026-08-30
+- Static-matched compact sidearm reload endpoints generated: 2026-08-31
+- Camera-safe six-family pose-to-pose reload clips rebuilt: 2026-08-31
+- Dedicated long-gun forearm crop and runtime layer rebuilt: 2026-08-31
+- Articulated magazine grasp, real-prop contact following, and professional
+  platform-specific slide manipulation rebuilt/reviewed: 2026-09-01
+- Runtime reload layers rebuilt as left-support-arm-only crops, with the static
+  firing arm retained and visible magazines driven directly by the support-hand
+  contact: 2026-09-01
+- Animated first-person sleeve fit and upper-arm volume revised: 2026-08-28
+- Service-pistol support-arm pose revised in Blender: 2026-08-28
+- First-person weapon uniformly enlarged around the authored two-hand grip center: 2026-08-28
+
+Attribution: **"fps animated smg" by DJMaesen, licensed under CC BY 4.0.**
+
+The original GLB embeds the creator, source URL, title, and `CC-BY-4.0`
+license in `asset.extras`. `smg45_first_person.glb` retains the authored
+materials, skin weights, and two-handed reload action. Its cloth sleeves keep
+the fitted wrist profile, then widen through a smooth forearm blend and receive
+additional shoulder-side radial expansion so the full circumference continues
+below the first-person camera at idle, ADS, and throughout reload.
+The source mesh's existing open boundary loops are sealed with Blender fill
+faces so an oblique camera cannot reveal hollow sleeve cuts. This preserves the
+authored vertex set, UV layers, skin weights, materials, and animation while
+adding only the closure faces needed by the first-person adaptation.
+The first-person-only weapon geometry is enlarged uniformly by 8% around the
+midpoint of the two authored palm anchors; the muzzle marker follows the same
+transform. No weapon axis is stretched independently, and the field weapon
+export remains at its established world scale.
+`first_person_arms.glb` is the older split-arm adaptation, and
+`smg45_weapon.glb` separates the field weapon from the first-person rig. The
+three static arm variants are separate Blender-generated evaluations of the
+same authored mesh: a rifle pose, a compact service-pistol two-handed stance,
+and a large-pistol two-handed stance. They do not apply the animated SMG sleeve
+extension; each exports explicit palm and wrist frame markers so runtime code
+can translate the pose without accumulating rotations on the arm mesh. The
+service-pistol variant offsets the authored shoulder and bakes a new wrist IK
+target and elbow pole so P226, M1911, and GSh-18 use a bent support arm without
+pulling the complete limb toward the camera. This revision changes only the
+evaluated skeletal pose and marker placement; it does not add source geometry.
+`animated_reload_arms.glb` is an arms-only skinned derivative that removes the
+visible SMG while retaining the authored glove/sleeve materials, finger bones,
+skin weights, and 13,700-triangle full-arm topology. Contract revision 9 keeps
+that complete topology as the non-runtime `FullReloadArmsAuditMesh`, adds a
+6,343-triangle left-only `LongGunReloadForearmsMesh` with a 28 source-unit
+(0.42 m) elbow-length cuff, and a 4,667-triangle left-only
+`SidearmReloadForearmsMesh` with a 16 source-unit (0.24 m) compact cuff. All
+three meshes share the original skin and armature, materials, UVs, and normalized
+weights. Runtime combines the selected animated support-arm crop with the
+weapon-specific static firing arm; the full audit mesh is always hidden. A geometry-free
+The formerly intrusive upper-arm cloth remains audit-only; runtime does not
+require a full-arm compatibility mesh. The authored frame-155 two-hand surface
+is baked as the new bind pose, and 24 named tactical/empty
+reload clips cover M4A1, AK74, SCAR-L, MP5A5, M24, AXMC, AWM, VSS, P226,
+M1911, GSh-18, and Desert Eagle. Its palm markers use evaluated glove contact
+centers, while
+`RightGripFrame` preserves the source SMG's real primary-grip transform and is
+used only to mount the left-arm layer. No procedural replacement geometry is
+introduced. The 2026-08-30 DCC revision
+solves left-hand position separately from wrist rotation, makes every baked
+quaternion track hemisphere-continuous before glTF export, and exports one
+platform-specific elbow-pole marker per profile. The 2026-08-31 follow-up then
+hard-matches every pistol clip boundary back to the exact `pistol_service` or
+`pistol_large` static pose so the exchange stays compact and the support arm
+does not jitter back into a full-arm silhouette. Contract revision 8 places
+`LeftSidearmMagazineAnchorFrame` on an actual glove-side triangle selected by
+BVH at the camera-calibrated signed offsets of -39.7 mm lateral, -11.8 mm
+forward, and 61.3 mm below the evaluated palm center. Aligning this point with
+the magazine uses a compact platform-calibrated wrist pose: -10/25/42 degrees
+for P226 and M1911, 0/5/42 degrees for GSh-18, and -9/28/30 degrees for Desert
+Eagle. Tactical and empty pistol clips reuse the exact `pistol_service` or
+`pistol_large` static DCC pose at normalized time 0.00 and 1.00. Their cropped
+forearms now use a deterministic analytical shoulder/elbow solve in Blender,
+with a compact position-and-wrist path for the magazine and an overhand slide
+beat on empty reloads; runtime selects and samples the baked clip without adding
+a second shoulder translation. This removes the former generic-IK branch flip
+and the static-to-skinned visibility-boundary flip.
+
+The 2026-09-01 revision replaces the former open-palm approximation with a
+purpose-authored `magazine_grasp` pose. The thumb opposes four independently
+curled finger chains around the real magazine. Contract revision 9 removes the
+animated firing-arm geometry from both runtime crops and keeps the stable static
+right arm on the weapon. During extraction and insertion, the installed or
+replacement magazine is placed directly at the animated left-palm contact; both
+magazines are hidden during the pouch hand-off, so no independent free-floating
+prop path is rendered. Service pistols and Desert Eagle retain distinct slide
+contact/pull/hold/release timing, with the support hand releasing while the slide
+returns under spring force.
+
+The revision groups the twelve profiles into six readable choreography sets:
+straight rifle (M4A1/SCAR-L), rock-and-lock (AK74/VSS), MP5, precision/internal
+(M24/AXMC/AWM), service pistol (P226/M1911/GSh-18), and Desert Eagle. Long guns
+use direct exchange poses instead of the retired waist-pouch arc, with explicit
+old-magazine-out and new-magazine-seat holds. Empty clips add a mechanical
+contact/pull/hold/release beat, while M24 retains its bolt beat in both tactical
+and empty clips. The builder verifies zero hold drift, a 0.65 m control envelope
+for long guns and 0.32 m for pistol crops, fixed shoulder roots and right grip,
+hemisphere-continuous quaternions, 45 mm maximum pistol joint/palm step, exact
+pistol endpoints within 0.01 radians and 3 mm, glove-surface marker contact, and
+all 24 exported clip durations. Sidearm validation also verifies grasp
+clearance and per-digit curl at extraction and insertion. It additionally samples every other frame of
+all sixteen long-gun clips in the right-grip camera proxy: delivered spans peak
+at 0.719082 m horizontal, 1.183342 m depth, 0.643858 m vertical, and 0.552705 m
+rear extent. The retained full-arm layer is deliberately rejected by the same
+gate at 1.843685/2.900767/0.979012 m with 2.357507 m rear extent, so the prior
+near-plane giant-sleeve failure cannot satisfy the build contract. These changes
+preserve the authored materials, skin, and arm hierarchy.
+The original model and all derived geometry remain copyright DJMaesen and are not
+covered by the repository's MIT license.
+
+## 2026-09-21 hands-first presentation
+
+The current runtime hand crops are rebuilt by
+`scripts/blender/build_compact_first_person_hands.py` from the same licensed
+source. `source_art/first_person_hands/` contains the editable Blender sources
+for rifle, pistol, SMG reload, and ladder poses. The pass enlarges glove contact
+surfaces, moves sleeve continuation outside the camera, retains the authored
+grip markers and reload skeleton, and adds five role material variants in
+`hands_palette.glb`. These derivatives remain under DJMaesen's CC BY 4.0 terms.
+
+## 2026-10-06 role-specific operator hand kits
+
+The role-specific first-person hand kits are Blender-authored derivatives of
+the same DJMaesen arms source. They retain the licensed hand mesh, materials,
+skin/animation contracts, and authored grip markers while adding five
+role-specific sleeve, cuff, glove-proportion, and ladder-hand variants:
+`Viper`, `Heron`, `Lynx`, `Magpie`, and `Jackal`. Each role contains
+`Rifle`, `PistolService`, `PistolLarge`, `Smg`, `Reload`, and `Ladder` families.
+The `Reload` family retains the authored full-arm audit mesh but exposes a
+left-only long-gun support crop for runtime; the weapon-specific static firing
+hand remains the only right-side hand. Runtime selects one authored role
+subtree; C# does not reshape or recolor the mesh. Sidearms continue to use
+their existing static presentation and are outside this long-gun reload pass.
+
+- Editable source: `../../source_art/first_person_hands/operator_hand_kits.blend`
+- Runtime output: `operator_hand_kits.glb` and its six embedded PNG sidecars
+- Reproducible builder: `../../scripts/blender/build_operator_hand_kits.py`
+- Build/review date: 2026-10-06
+- Required attribution remains: **"fps animated smg" by DJMaesen, licensed
+  under CC BY 4.0.** The derivative must retain the source link, license link,
+  and this role-specific modification notice.
+
+| Role-kit file | Bytes | SHA-256 |
+| --- | ---: | --- |
+| Runtime `operator_hand_kits.glb` | 37,323,952 | `18448003D361BDF0EAA87B523FBE069CF10B58D7B1E6055AAF37D9C5BD201299` |
+| Texture `operator_hand_kits_Image_0.png` | 1,913,243 | `3BC291E07FA1E04DC5CEE727297D7051966A8D8AC39FCCE622BFB7DC408CB002` |
+| Texture `operator_hand_kits_Image_1.png` | 3,561,679 | `92CF1397C106CF721902A676985E82253CEC6E526DBD25510BD4E8B8685EEEA1` |
+| Texture `operator_hand_kits_Image_2.png` | 3,527,986 | `ADD5B1429F735916033AE45BD755B6A6DA70A9EBD047EED38F78C7D64A967F08` |
+| Texture `operator_hand_kits_Image_3.png` | 3,087,805 | `413215D813112D2E1A21FCDDF198A7573E43B57B82B51DD3F6C031B8454A4C41` |
+| Texture `operator_hand_kits_Image_4.png` | 5,531,678 | `2E32C5BA120A0B9B32B2F08409164A1EA0A40CE7EB2F71CE4371F28A84A5405B` |
+| Texture `operator_hand_kits_Image_5.png` | 2,889,977 | `8C80453448135822B1F5518CB28E927027ED815A21FC5FF5F4C143E7A93438EF` |
+| DCC source `../../source_art/first_person_hands/operator_hand_kits.blend` | 442,680,450 | `34B54DA25E990325B352B1BF7CCDAB9F0539406D940741EFA9A776650D1524F` |
+| Builder `../../scripts/blender/build_operator_hand_kits.py` | 25,770 | `A7F0C7C9A73910C12A368987E3019AB578B6C125AAC066992F5200B777D53420` |
+
+The source and every derived role kit remain copyright DJMaesen and are not
+covered by the repository's MIT license. Project-authored deformation code and
+the role-selection adapter remain MIT-covered repository code, subject to the
+AI-assisted DCC disclosure in `docs/CONTENT_PROVENANCE.md`.
+
+## Unity conversion
+
+The bundled FBX was converted from the licensed project adaptation using Blender.
+Mesh hierarchy, authored skeletal and weapon animation, and six 2048² texture maps
+were preserved. The muzzle marker was corrected at the barrel opening.
+For Unity URP/Lit, material mapping is:
+
+- HandsSleeve and HandsGlove: Image_0 (base color), Image_2 (normal), ArmsMetalSmooth (metallic and smoothness), ArmsOcclusion.
+- smg45: Image_3 (base color), Image_5 (normal), WeaponMetalSmooth (metallic and smoothness), WeaponOcclusion.
+
+Unity channel-packed maps were derived from the original Image_1 and Image_4
+glTF packed maps. Disable sRGB on the data maps and mark the normal maps as Normal Map.

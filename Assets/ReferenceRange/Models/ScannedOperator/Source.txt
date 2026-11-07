@@ -1,0 +1,6 @@
+Eric Rigged 001, Renderpeople
+https://renderpeople.com/free-3d-people/
+https://renderpeople.com/general-terms-and-conditions/
+
+This project uses the forearm and hand portion of the free scanned rig for real-time rendering.
+The shirt mask was used to tint the sleeve olive. The mesh was fitted to the existing first-person animation skeleton.

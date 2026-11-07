@@ -1,0 +1,6 @@
+Modern Warefare M4A1
+Author: Nneako (https://sketchfab.com/nickolasa.mcintosh)
+Original: https://sketchfab.com/3d-models/modern-warefare-m4a1-167dd49ffff14d41ab11b6417f128bf1
+License: CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+GLB obtained from the public AI2 Objaverse dataset.
+Adapted into FBX for Unity, with separate weapon parts, presentation anchors and Unity-compatible PBR texture channels.
